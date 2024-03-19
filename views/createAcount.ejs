@@ -1,0 +1,51 @@
+<%- include('../partials/head.ejs') %>
+
+
+<%- include('../partials/nav.ejs') %>
+<h1> CREATE ACCOUNT </h1>
+<section class="container-fluid">
+    <figure>
+        <form action="/auth/send-email-credentials"  method="POST">
+            <div>
+                <label>Username</label>
+                <input type="text" placeholder="Your desired username" name="username"/>
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="email" placeholder="Your personal Email adress" name="email"/>
+            </div>
+            <div>
+                <label>Email Confirm</label>
+                <input type="email" placeholder="Your personal Email adress" />
+            </div>
+            <div>
+                <label>Security Question</label>
+                <input type="text" placeholder="Enter a question here" name="question"/>
+                <p>The above question will be use to varify you account</p>
+            </div>
+            <div>
+                <label>Security Question Answer</label>
+                <input type="text" placeholder="Enter a answer of  the above qestion here" name="answer"/>
+                <p>This will be an answer to the above question</p>
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password" placeholder="Enter password" name="passpin"/>
+            </div>
+            <div>
+                <label>Password Confirm</label>
+                <input type="password" placeholder="Enter password" />
+            </div>
+            <div>
+                <input type="password" hidden name="token" id="token" name="token" value="verified" />
+            </div>
+            <div>
+                <button>Create</button>
+            </div>
+        </form>
+    </figure>
+</section>
+
+
+
+<%- include('../partials/footer.ejs') %>

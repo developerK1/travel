@@ -1,0 +1,15 @@
+<%- include('../partials/head.ejs') %>
+
+
+<%- include('../partials/nav.ejs') %>
+<h1> This is the headding </h1>
+
+<%let elems = 0 %>
+
+<% Drivers.map(driver =>{ %>
+   <h1><%=elems ++%></h1>
+<% })%>
+
+
+
+<%- include('../partials/footer.ejs') %>

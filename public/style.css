@@ -1,0 +1,101 @@
+nav {
+	width : 50%;
+	display :flex;
+	height : 15vh;
+}
+
+nav ul {
+	display :flex;
+	width : 100%;
+	justify-content : space-evenly;
+}
+
+nav ul a{
+	width : 160px;
+	height : 35px;
+	text-align :center;
+	line-height : 33px;
+	background-color :black;
+	color : orange;
+	text-decoration : none;
+	transition : all 0.5s ease;
+}
+.admin-link {
+	display: none;
+}
+nav ul a:hover{
+	letter-spacing : 1.8px;
+	background-color :orange;
+	color :black;font-weight : 700;
+}
+
+button {
+	transition: all 0.6s ease-in-out;
+	cursor: pointer;
+}
+/* ================================================================
+			LISTING  LISTING LISTING
+================================================================ */
+.flexy-sa {
+	display: flex;
+	justify-content: space-around;
+}
+.flexy {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* ================================================================
+			FROM SEARCH SEARCH
+================================================================ */
+#search-form aside {
+    min-height: 143px;
+    background-color: orange;
+    box-shadow: 3px 4px 9px black;
+    margin: -50px 0px 20px 0px;
+}
+#search-form form {
+    align-items: center;
+    height: 143px;
+}
+
+#search-form form input {
+	width : 200px;
+}
+/* ================================================================
+			FROM SEARCH SEARCH
+================================================================ */
+.search-btn {
+	width : 120px;
+	height : 35px;
+	border-radius: 8px;
+}
+
+/* ================================================================
+			LISTING  LISTING LISTING
+================================================================ */
+#hero {
+	height : 100vh;
+}
+
+
+/* ================================================================
+			LISTING  LISTING LISTING
+================================================================ */
+#listings article aside {
+    width: 100%;
+    padding: 5% 1%;
+    border-radius: 12px;
+    box-shadow: 3px 4px 7px 1px rgba(0, 0, 0, 0.519);
+    min-height: 354px;
+    margin: 14px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	text-align: center;
+}
+
+#listings article img {
+	width : 49%;
+	height : 120px;
+}

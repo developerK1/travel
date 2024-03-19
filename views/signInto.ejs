@@ -1,0 +1,36 @@
+<%- include('../partials/head.ejs') %>
+
+
+<section>
+    <figure>
+        <form action="http://localhost/letsgo/dash/" method="POST">
+            <div>
+                <label>USERNAME</label>
+                <input type="text" placeholder="Your username ...." name="username" />
+            </div>
+            <div>
+                <label>EMAIL</label>
+                <input type="email" placeholder="Your email ...." name="email" />
+            </div>
+            <div>
+                <label>PASSWORD</label>
+                <input type="password" placeholder="Password ...." name="password" />
+            </div>
+            <div>
+                <button>LOG IN</button>
+            </div>
+        </form>
+        <a href="http:/localhost/letsgo/dash/recovery/">FORGOT PASSWORD</a>
+    </figure>
+</section>
+
+
+
+
+
+
+
+
+
+
+<%- include('../partials/footer.ejs') %>

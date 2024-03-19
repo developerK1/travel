@@ -1,0 +1,101 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/nav.ejs') %>
+<section class="container-fluid" id="hero">
+    <div class="container">
+        <article>
+            <h1>Getting there without waiting</h1>
+            <p>Find a driver</p>
+        </article>
+    </div>
+</section>
+<!-- END OF HERO SECTION
+START OF THE FORM  -->
+<section id="search-form" class="container-fluid flexy">
+    <aside class="container">
+        <form class="flexy-sa">
+            <select>
+                <option>Eastern Cape</option>
+                <option>Free State</option>
+                <option>Gauteng</option>sing
+                <option>KwaZulu Natal</option>
+                <option>Limpopo</option>
+                <option>MpumaLanga</option>
+                <option>Northeren Cape</option>
+                <option>North West</option>
+                <option>Western Cape</option>
+            </select>
+            <div>
+                <label>FROM</label>
+                <input type="text" placeholder="Where are you going ... ?" />
+            </div>
+            <div>
+                <label>TO</label>
+                <input type="text" placeholder="Where are you going ... ?" />
+            </div>
+            <button class="search-btn">Filter</button>
+        </form>
+    </aside>
+</section>
+<!-- END OF FORM SECTION
+FEATURES ADS -->
+<section>
+    
+</section>
+<!-- END OF FEATUREDS SECTION
+RENDERING THE DRIVERS ADS -->
+<section class="container-fluid" id="listings">
+    <div class="row">
+        <% drivers.map( driver => { %>
+        
+            <article class="col-lg-3 col-md-4 col-sm-6">
+                <aside>
+                    <div>
+                        <img src=<%=driver.imgper%> alt="letsgo"/>
+                        <img src=<%=driver.imgcar%> alt="letsgo"/>
+                    </div>
+                    <div>
+                        <h5>Name : <%= driver.name%></h5>
+                        <h5>Routes : <%= driver.location%> - <%=driver.destination %></h5>
+                        <h5>Model : <%= driver.car%></h5>
+                        <h5>Day : <%= driver.Available%></h5>
+                        <h5>Depart Time : <%= driver.leavingtime%></h5>
+                    </div>
+                    <div>
+                        <a href="/drivers/details/<%=driver.id%>" ><button>View Details</button></a>
+                    </div>
+                </aside>
+            </article>
+        <% }) %>
+    </div>
+</section>
+<section class="container-fluid" id="how-it-works">
+    <div class="container">
+        <div class="row">
+            <article class="col-lg-4 col-md-4">
+                <aside class="circles">
+                    <h6>ICON</h6>
+                    <p>Create Account</p>
+                    <a href="/auth/create-acount/"><button>Register</button></a>
+                </aside>
+            </article>
+            <article class="col-lg-4 col-md-4">
+                <aside class="circles">
+                    <h6>ICON</h6>
+                    <p>Confirm Email</p>
+                    <a href="/show-it-works"><button>Read more</button></a>
+                </aside>
+            </article>
+            <article class="col-lg-4 col-md-4">
+                <aside class="circles">
+                    <h6>ICON</h6>
+                    <p>Log Into Your Account</p>
+                    <a href="/auth/log-in"><button>Sing in</button></a>
+                </aside>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+
+<%- include('../partials/footer.ejs') %>
