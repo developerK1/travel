@@ -22,11 +22,7 @@ app.use("/drivers", driversRoutes);
 app.use("/auth", authsRoutes);
 
 
-app.get("/", (req, res)=>{
-    res.send("welcome to the app");
-})
-
-app.get("/drivers", (req,res)=> {
+app.get("/", (req,res)=> {
   db.query("SELECT * FROM `drivers`",async  (err, results)=>{
    
             

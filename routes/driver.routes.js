@@ -1,48 +1,53 @@
 const router = require('express').Router();
 const db = require ("../config/db/db.config");
+const localData = require ("../dev helpers/localdata");
 
 
 //GET ALL ADS
 router.route('/').get((req, res) => {
    
-    db.query("SELECT * FROM `drivers`",async  (err, results)=>{
+    // db.query("SELECT * FROM `drivers`",async  (err, results)=>{
    
             
-        let data = await JSON.stringify(results);
-        data = await JSON.parse(data);
+    //     let data = await JSON.stringify(results);
+    //     data = await JSON.parse(data);
 
         
-        if(!err){
-            console.log(data)
-            res.render("home", {title:"index", drivers : data})
-        }else {
-            console.log("data coudnt be fetch at this moment");
-        }			
+    //     if(!err){
+    //         console.log(data)
+    //         res.render("home", {title:"index", drivers : data})
+    //     }else {
+    //         console.log("data coudnt be fetch at this moment");
+    //     }			
         
-    });
-        
+    // });
+    
+    res.render("home", {title:"index", drivers : localData})
 });
 
 
 //GET ALL SINGLE RECORD
 router.route('/details/:id').get((req, res) => {
-   
 
-    const sql = `SELECT * FROM drivers WHERE id = '${req.params.id}'`;
+    // const singleRecord  = localData.filter(item => item.id == req.params.id);
+    // console.log(singleRecord)
 
-    db.query(sql, (err, results)=>{
+    // const sql = `SELECT * FROM drivers WHERE id = '${req.params.id}'`;
+
+    // db.query(sql, (err, results)=>{
 
 
-        if(!err){
+    //     if(!err){
 
-             res.render("details", {title:"Details" , driver : results})
-        }else {
-            console.log("data coudnt be fetch at this moment");
-        }			
+    //          res.render("details", {title:"Details" , driver : results})
+    //         }else {
+    //             console.log("data coudnt be fetch at this moment");
+    //         }			         
+    //     });
         
-        
-    });
-        
+
+        const results = localData.filter(item => item.id == req.params.id);
+        res.render("details", {title:"Details" , driver : results})
 
 });
 
