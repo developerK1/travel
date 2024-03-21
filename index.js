@@ -8,6 +8,7 @@ const db = require ("./config/db/db.config");
 const driversRoutes =  require ("./routes/driver.routes");
 const authsRoutes =  require ("./routes/auths.routes");
 // const data = require("./dev helpers/data");
+ const localData = require("./dev helpers/localdata");
 
 port =  process.env.PORT || 6060;
 app.set('view engine', 'ejs');
@@ -23,20 +24,7 @@ app.use("/auth", authsRoutes);
 
 
 app.get("/", (req,res)=> {
-  db.query("SELECT * FROM `drivers`",async  (err, results)=>{
-   
-            
-            let data = await JSON.stringify(results);
-            data = await JSON.parse(data);
-
-            
-            if(!err){
-                res.render("home", {title:"index", drivers : data})
-            }else {
-                console.log("data coudnt be fetch at this moment");
-            }			
-            
-        });
+    res.render("home", {title:"index", drivers : localData})
 })
 
 
